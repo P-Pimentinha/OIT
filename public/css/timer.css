@@ -1,0 +1,115 @@
+.timer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.counter {
+  width: 100px;
+  display: inline-block;
+}
+
+.alert {
+  width: 250px;
+  height: 70px;
+  background-color: rgb(136, 255, 0);
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.alertY {
+  background-color: rgb(255, 0, 0);
+}
+
+.buttons {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btnUp {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
+  width: 70px;
+
+  cursor: pointer;
+  color: #fff;
+  background: #2cb1bc;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.btnDown {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
+  width: 70px;
+
+  cursor: pointer;
+  color: #fff;
+  background: #2cb1bc;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.btnStart {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  margin-top: 25px;
+  width: 60px;
+  background-color: rgb(92, 179, 92);
+
+  cursor: pointer;
+  color: #fff;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+
+.btn {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  margin-top: 25px;
+  width: 70px;
+  background-color: rgb(92, 179, 143);
+
+  cursor: pointer;
+  color: #fff;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+
+.disable {
+  opacity: 50%;
+}
+
+p {
+  font-size: 75px;
+  margin: 0 auto;
+}

@@ -1,0 +1,15 @@
+.container,
+.container-fluid {
+  margin-top: 50px;
+}
+
+/* .row {
+  background-color: rgb(236, 93, 23);
+  border: rgb(255, 199, 64) solid 10px;
+} */
+
+/* [class*='col'] {
+  border: black solid 5px;
+  background-color: rgb(100, 0, 228);
+  color: rgb(255, 255, 255);
+} */
