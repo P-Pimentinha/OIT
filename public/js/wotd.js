@@ -1,13 +1,13 @@
 const button = document.querySelector('.start-btn');
 const buttonTwo = document.querySelector('.start-btn-two');
 
-const subjectData = [
-  { subject: 'Read Book' },
-  { subject: 'Write One Page' },
-  { subject: 'Listen PodCast' },
-  { subject: 'Watch Serie' },
-  { subject: 'Generate random word and write 5 sentences' },
-];
+// const subjectData = [
+//   { subject: 'Read Book' },
+//   { subject: 'Write One Page' },
+//   { subject: 'Listen PodCast' },
+//   { subject: 'Watch Serie' },
+//   { subject: 'Generate random word and write 5 sentences' },
+// ];
 
 let deuWord = '';
 let engWord = '';
@@ -44,13 +44,13 @@ const randomWordGenerator = () => {
   document.getElementById('englishWord').innerHTML = engWord;
 };
 
-const randomSubjectGenerator = () => {
-  const random = Math.floor(Math.random() * subjectData.length);
+// const randomSubjectGenerator = () => {
+//   const random = Math.floor(Math.random() * subjectData.length);
 
-  randomSubject = subjectData[random].subject;
+//   randomSubject = subjectData[random].subject;
 
-  document.getElementById('whatToStudy').innerHTML = randomSubject;
-};
+//   document.getElementById('whatToStudy').innerHTML = randomSubject;
+// };
 
 button.addEventListener('click', () => {
   randomWordGenerator();
