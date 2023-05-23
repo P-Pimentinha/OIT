@@ -1,4 +1,3 @@
-import words from '../data/data.js';
 const button = document.querySelector('.start-btn');
 const buttonTwo = document.querySelector('.start-btn-two');
 

@@ -5,10 +5,12 @@
     <script
       src="https://kit.fontawesome.com/ce8e2beaa8.js"
       crossorigin="anonymous"
+      Content-Security-Policy="self"
     ></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>WordOfTheDay</title>
     <link rel="stylesheet" href="../css/wotd.css" />
   </head>
@@ -39,7 +41,8 @@
       Romanian
     </button> -->
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script  type="module" src="./js/wotd.js"  charset="uft-8"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script  type="module" src="../js/wotd.js"  charset="uft-8"></script>
   </body>
 </html>
+
