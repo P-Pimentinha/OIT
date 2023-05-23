@@ -23,6 +23,12 @@ app.get('/timer', function (request, response) {
   response.sendFile(path.resolve(__dirname, './public/pages', 'timer.html'));
 });
 
+app.get('/wotd', function (request, response) {
+  response.sendFile(
+    path.resolve(__dirname, './public/pages', 'wordoftheday.html')
+  );
+});
+
 const port = process.env.PORT || 5000;
 
 const start = () => {
