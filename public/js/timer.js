@@ -28,6 +28,14 @@ function initTimer() {
   upButton.setAttribute('disabled', '');
   downButton.classList.add('disable');
   downButton.setAttribute('disabled', '');
+
+  resOne.classList.add('disable');
+  resOne.setAttribute('disabled', '');
+  resTwo.classList.add('disable');
+  resTwo.setAttribute('disabled', '');
+  resThree.classList.add('disable');
+  resThree.setAttribute('disabled', '');
+
   squareAlert.classList.add('alertY');
 
   interval = setInterval(timerFunc, 1000);
@@ -41,6 +49,14 @@ function timerFunc() {
     upButton.removeAttribute('disabled', '');
     downButton.classList.remove('disable');
     downButton.removeAttribute('disabled', '');
+
+    resOne.classList.remove('disable');
+    resOne.removeAttribute('disabled', '');
+    resTwo.classList.remove('disable');
+    resTwo.removeAttribute('disabled', '');
+    resThree.classList.remove('disable');
+    resThree.removeAttribute('disabled', '');
+
     squareAlert.classList.remove('alertY');
 
     clearInterval(interval);
