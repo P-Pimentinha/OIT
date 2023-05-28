@@ -8,18 +8,6 @@
   display: inline-block;
 }
 
-.alert {
-  width: 250px;
-  height: 70px;
-  background-color: rgb(136, 255, 0);
-  margin: 0 auto;
-  margin-top: 30px;
-}
-
-.alertY {
-  background-color: rgb(255, 0, 0);
-}
-
 .buttons {
   margin: 0 auto;
   text-align: center;
@@ -112,4 +100,21 @@
 p {
   font-size: 75px;
   margin: 0 auto;
+}
+
+.alert {
+  width: 250px;
+  height: 70px;
+  background-color: rgb(92, 179, 92);
+  margin: 0 auto;
+  margin-top: 30px;
+
+  border: transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.alertY {
+  background-color: rgb(179, 92, 92);
 }
