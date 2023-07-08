@@ -6,18 +6,21 @@ const resOne = document.querySelector('.res45');
 const resTwo = document.querySelector('.res60');
 const resThree = document.querySelector('.res90');
 const squareAlert = document.querySelector('.alert');
+const set = document.getElementById('set');
+
+set.innerHTML = 'Set: ';
 
 let timer;
 let interval;
 
+// Sets the Initial Timer to the default value 60; or to the value in localStorage
 (function setTimer() {
   const time = localStorage.getItem('timer');
   if (time && time != 0) {
     timer = time;
   } else {
-    timer = 5;
+    timer = 60;
   }
-
   counter.innerHTML = timer;
 })();
 
