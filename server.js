@@ -35,11 +35,11 @@ app.get('/timer', function (request, response) {
   response.sendFile(path.resolve(__dirname, './public/pages', 'timer.html'));
 });
 
-app.get('/wotd', function (request, response) {
-  response.sendFile(
-    path.resolve(__dirname, './public/pages', 'wordoftheday.html')
-  );
-});
+// app.get('/wotd', function (request, response) {
+//   response.sendFile(
+//     path.resolve(__dirname, './public/pages', 'wordoftheday.html')
+//   );
+// });
 
 app.use('/api/v1/words', wordRouter);
 

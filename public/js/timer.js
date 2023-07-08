@@ -13,7 +13,7 @@ const set = document.getElementById('set');
 set.innerHTML = 'Set: ';
 const timerObj = new Timer();
 
-let timer = 50;
+// let timer = 50;
 let interval;
 
 // Sets the Initial Timer to the default value 60; or to the value in localStorage
@@ -82,7 +82,6 @@ function timerFunc() {
     return;
   }
   timerObj.subTimer(counter);
-  console.log('hello');
   // prettier-ignore
   // counter.innerHTML = timerObj.getTime();
 }
