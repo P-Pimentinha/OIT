@@ -1,4 +1,5 @@
 import Timer from './timer/Timer.js';
+import Set from './timer/Set.js';
 
 const counter = document.querySelector('.counter');
 const startButton = document.querySelector('.btnStart');
@@ -10,8 +11,8 @@ const resThree = document.querySelector('.res90');
 const squareAlert = document.querySelector('.alert');
 const set = document.getElementById('set');
 
-set.innerHTML = 'Set: ';
 const timerObj = new Timer();
+const setObj = new Set();
 
 // let timer = 50;
 let interval;
@@ -30,12 +31,23 @@ let interval;
 // Sets the Initial Timer to the default value 60; or to the value in localStorage
 (function setTimer() {
   const time = localStorage.getItem('timer');
+  const setLoSt = localStorage.getItem('set');
+
   if (time && time != 0) {
     timerObj.setTime(time);
   } else {
     timerObj.setTime(60);
   }
+
+  if (setLoSt) {
+    setObj.setSet(setLoSt);
+  } else {
+    setObj.setSet(1);
+  }
+
   counter.innerHTML = timerObj.getTime();
+
+  set.innerHTML = 'Set: ' + setObj.getSet();
 })();
 
 function initTimer() {
@@ -79,6 +91,7 @@ function timerFunc() {
     clearInterval(interval);
     timerObj.setTime(localStorage.getItem('timer'));
     counter.innerHTML = timerObj.getTime();
+    setObj.add(set);
     return;
   }
   timerObj.subTimer(counter);

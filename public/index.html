@@ -34,35 +34,51 @@
     <!-- <div class="alert"></div> -->
 
     <!-- bootstrap layout -->
-    <div class="container text-center">
-      <div class="row">
-        <p class="counter"></p>
-      </div>
+    <div class="container text-center mt-5">
+      <div class="row mainRow">
+        <!-- col 1 -->
+        <div class="col">
+          <div class="row">
+            <div class="col"></div>
+            <div class="col">
+              <p id="set"></p>
+              <p>h</p>
+              <p>h</p>
+              <p>h</p>
+              <p>h</p>
+              <p>h</p>
+              <p>h</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="row" style="height: 80px; overflow-y: auto">
-        <div class="col-4">
-          <p id="set"></p>
-        </div>
-        <div class="col-4">
-          <button class="UpDown btnDown">Down</button>
-          <button class="btnStart">Start</button>
-          <button class="UpDown btnUp">Up</button>
-        </div>
-        <div class="col-4"></div>
-      </div>
+        <!-- col 2 -->
+        <div class="col">
+          <div class="row secondaryRow">
+            <div class="col"><p class="counter fs-1"></p></div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn res45">45</button>
-          <button class="btn res60">60</button>
-          <button class="btn res90">90</button>
-        </div>
-      </div>
+          <div class="row secondaryRow">
+            <div class="col">
+              <button class="UpDown btnDown">Down</button>
+              <button class="btnStart">Start</button>
+              <button class="UpDown btnUp">Up</button>
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="alert"></div>
+          <div class="row secondaryRow">
+            <div class="col">
+              <button class="btn res45">45</button>
+              <button class="btn res60">60</button>
+              <button class="btn res90">90</button>
+            </div>
+          </div>
+          <div class="row secondaryRow">
+            <div class="alert"></div>
+          </div>
         </div>
+        <!-- col 3 -->
+        <div class="col mainRow"></div>
       </div>
     </div>
 
