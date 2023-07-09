@@ -10,6 +10,7 @@ const resTwo = document.querySelector('.res60');
 const resThree = document.querySelector('.res90');
 const squareAlert = document.querySelector('.alert');
 const set = document.getElementById('set');
+const completedId = document.getElementById('completed');
 
 const timerObj = new Timer();
 const setObj = new Set();
@@ -32,6 +33,7 @@ let interval;
 (function setTimer() {
   const time = localStorage.getItem('timer');
   const setLoSt = localStorage.getItem('set');
+  const completed = localStorage.getItem('completed');
 
   if (time && time != 0) {
     timerObj.setTime(time);
@@ -45,9 +47,13 @@ let interval;
     setObj.setSet(1);
   }
 
-  counter.innerHTML = timerObj.getTime();
+  if (completed) {
+    setObj.setCompleted(completed);
+  }
 
+  counter.innerHTML = timerObj.getTime();
   set.innerHTML = 'Set: ' + setObj.getSet();
+  completedId.innerHTML = 'Done: ' + setObj.getCompleted();
 })();
 
 function initTimer() {
@@ -91,7 +97,7 @@ function timerFunc() {
     clearInterval(interval);
     timerObj.setTime(localStorage.getItem('timer'));
     counter.innerHTML = timerObj.getTime();
-    setObj.add(set);
+    setObj.add(set, completedId);
     return;
   }
   timerObj.subTimer(counter);
