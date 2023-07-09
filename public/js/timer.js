@@ -2,6 +2,7 @@ import Timer from './timer/Timer.js';
 import Set from './timer/Set.js';
 
 const counter = document.querySelector('.counter');
+const resetBtn = document.querySelector('.resObj');
 const startButton = document.querySelector('.btnStart');
 const upButton = document.querySelector('.btnUp');
 const downButton = document.querySelector('.btnDown');
@@ -138,6 +139,16 @@ function timerFunc() {
 //   counter.innerHTML = timer;
 // }
 
+function reset() {
+  setObj.setCompleted(0);
+  setObj.setSet(1);
+  localStorage.setItem('set', setObj.getSet());
+  localStorage.setItem('completed', setObj.getCompleted());
+  set.innerHTML = 'Set: ' + setObj.getSet();
+  completedId.innerHTML = 'Done: ' + setObj.getCompleted();
+}
+
+resetBtn.addEventListener('click', reset);
 startButton.addEventListener('click', initTimer);
 upButton.addEventListener('click', timerObj.add.bind(timerObj, counter));
 downButton.addEventListener('click', timerObj.sub.bind(timerObj, counter));

@@ -29,7 +29,11 @@
   font-size: 40px;
 }
 
-.btn {
+.btn-danger {
+  width: 85px;
+}
+
+.btnS {
   width: 70px;
   height: auto;
   background-color: rgb(92, 179, 143);

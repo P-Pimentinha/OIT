@@ -17,8 +17,6 @@ export default class Set {
     set.innerHTML = 'Set: ' + this.set;
   }
 
-  addCompleted() {}
-
   //getters & setters
   getCompleted() {
     return this.completed;
