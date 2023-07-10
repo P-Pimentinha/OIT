@@ -12,6 +12,7 @@ const resThree = document.querySelector('.res90');
 const squareAlert = document.querySelector('.alert');
 const set = document.getElementById('set');
 const completedId = document.getElementById('completed');
+const completeBtn = document.querySelector('.complBTN');
 
 const timerObj = new Timer();
 const setObj = new Set();
@@ -95,16 +96,23 @@ function timerFunc() {
   // counter.innerHTML = timerObj.getTime();
 }
 
-function reset() {
-  setObj.setCompleted(0);
-  setObj.setSet(1);
-  localStorage.setItem('set', setObj.getSet());
-  localStorage.setItem('completed', setObj.getCompleted());
-  set.innerHTML = 'Set: ' + setObj.getSet();
-  completedId.innerHTML = 'Done: ' + setObj.getCompleted();
-}
+// function reset() {
+//   setObj.setCompleted(0);
+//   setObj.setSet(1);
+//   localStorage.setItem('set', setObj.getSet());
+//   localStorage.setItem('completed', setObj.getCompleted());
+//   set.innerHTML = 'Set: ' + setObj.getSet();
+//   completedId.innerHTML = 'Done: ' + setObj.getCompleted();
+// }
 
-resetBtn.addEventListener('click', reset);
+resetBtn.addEventListener(
+  'click',
+  setObj.resetSet.bind(setObj, set, completedId)
+);
+completeBtn.addEventListener(
+  'click',
+  setObj.completeSet.bind(setObj, completedId, set)
+);
 startButton.addEventListener('click', initTimer);
 upButton.addEventListener('click', timerObj.add.bind(timerObj, counter));
 downButton.addEventListener('click', timerObj.sub.bind(timerObj, counter));
