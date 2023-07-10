@@ -20,17 +20,6 @@ const setObj = new Set();
 let interval;
 
 // Sets the Initial Timer to the default value 60; or to the value in localStorage
-// (function setTimer() {
-//   const time = localStorage.getItem('timer');
-//   if (time && time != 0) {
-//     timer = time;
-//   } else {
-//     timer = 60;
-//   }
-//   counter.innerHTML = timer;
-// })();
-
-// Sets the Initial Timer to the default value 60; or to the value in localStorage
 (function setTimer() {
   const time = localStorage.getItem('timer');
   const setLoSt = localStorage.getItem('set');
@@ -105,39 +94,6 @@ function timerFunc() {
   // prettier-ignore
   // counter.innerHTML = timerObj.getTime();
 }
-
-// function add() {
-//   timer++;
-
-//   localStorage.setItem('timer', timer);
-//   counter.innerHTML = timer;
-// }
-
-// function sub() {
-//   if (timer <= 1) return;
-
-//   timer--;
-//   localStorage.setItem('timer', timer);
-//   counter.innerHTML = timer;
-// }
-
-// function firstRes() {
-//   timer = 45;
-//   localStorage.setItem('timer', timer);
-//   counter.innerHTML = timer;
-// }
-
-// function secondRes() {
-//   timer = 60;
-//   localStorage.setItem('timer', timer);
-//   counter.innerHTML = timer;
-// }
-
-// function threeRes() {
-//   timer = 90;
-//   localStorage.setItem('timer', timer);
-//   counter.innerHTML = timer;
-// }
 
 function reset() {
   setObj.setCompleted(0);
