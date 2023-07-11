@@ -62,6 +62,12 @@ function initTimer() {
   resThree.classList.add('disable');
   resThree.setAttribute('disabled', '');
 
+  resetBtn.classList.add('disable');
+  resetBtn.setAttribute('disabled', '');
+
+  completeBtn.classList.add('disable');
+  completeBtn.setAttribute('disabled', '');
+
   squareAlert.classList.add('alertY');
 
   interval = setInterval(timerFunc, 1000);
@@ -82,6 +88,12 @@ function timerFunc() {
     resTwo.removeAttribute('disabled', '');
     resThree.classList.remove('disable');
     resThree.removeAttribute('disabled', '');
+
+    resetBtn.classList.remove('disable');
+    resetBtn.removeAttribute('disabled', '');
+
+    completeBtn.classList.remove('disable');
+    completeBtn.removeAttribute('disabled', '');
 
     squareAlert.classList.remove('alertY');
 
