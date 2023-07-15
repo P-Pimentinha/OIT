@@ -5,12 +5,14 @@ import compression from 'compression';
 import dotenv from 'dotenv';
 dotenv.config();
 import connectDB from './db/connect.js';
+import authenticateUser from './middleware/auth.js';
 
 //error handling
 import 'express-async-errors';
 
-//routes
+//routers
 import wordRouter from './routes/wordsRoutes.js';
+import authRouter from './routes/authRoutes.js';
 
 //middleware
 import notFoundMiddleware from './middleware/not-found.js';
@@ -31,7 +33,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(compression());
 
-app.get('/timer', function (request, response) {
+app.get('/timer', authenticateUser, function (request, response) {
   response.sendFile(path.resolve(__dirname, './public/pages', 'timer.html'));
 });
 
@@ -42,6 +44,7 @@ app.get('/timer', function (request, response) {
 // });
 
 app.use('/api/v1/words', wordRouter);
+app.use('/api/v1/auth', authRouter);
 
 //error handling
 app.use(notFoundMiddleware);
