@@ -1,6 +1,7 @@
 import User from '../models/User.js';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, UnAuthenticatedError } from '../errors/index.js';
+import { createJWT } from '../utils/tokenUtils.js';
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -16,7 +17,7 @@ const register = async (req, res) => {
   }
 
   const user = await User.create({ name, email, password });
-  const token = user.createJWT();
+  const token = createJWT({ userId: user._id });
 
   res.status(StatusCodes.CREATED).json({
     user: {
@@ -44,7 +45,7 @@ const login = async (req, res) => {
     throw new UnAuthenticatedError('Invalid Credentials');
   }
 
-  const token = user.createJWT();
+  const token = createJWT({ userId: user._id });
   user.password = undefined;
   res.status(StatusCodes.OK).json({ user, token });
 };
@@ -68,7 +69,7 @@ const updateUser = async (req, res) => {
   // in this case only id
   // if other properties included, must re-generate
 
-  const token = user.createJWT();
+  // const token = user.createJWT();
   res.status(StatusCodes.OK).json({
     user,
     token,

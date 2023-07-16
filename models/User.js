@@ -35,11 +35,11 @@ UserSchema.pre('save', async function () {
   this.password = await bcryptjs.hash(this.password, salt);
 });
 
-UserSchema.methods.createJWT = function () {
-  return jwt.sign({ userId: this._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_LIFETIME,
-  });
-};
+// UserSchema.methods.createJWT = function () {
+//   return jwt.sign({ userId: this._id }, process.env.JWT_SECRET, {
+//     expiresIn: process.env.JWT_LIFETIME,
+//   });
+// };
 
 UserSchema.methods.comparePassword = async function (candidatePassword) {
   const isMatch = await bcryptjs.compare(candidatePassword, this.password);

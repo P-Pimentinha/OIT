@@ -10,59 +10,87 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/timer.css" />
-
-    <title>Timer</title>
+    <link rel="stylesheet" href="../css/timer.css" />
+    <title>Login and Register Page</title>
   </head>
   <body>
-    <!-- bootstrap layout -->
-    <div class="container text-center mt-5">
-      <div class="row mainRow">
-        <!-- col 1 -->
-        <div class="col mt-4">
-          <div class="row">
-            <div class="col">
-              <p id="set"></p>
-              <p id="completed"></p>
+    <!-- <h1>Login</h1>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+
+    <h1>Register</h1>
+    <form id="registerForm">
+      <input type="text" id="registerName" placeholder="Name" />
+      <input type="email" id="registerEmail" placeholder="Email" />
+      <input type="password" id="registerPassword" placeholder="Password" />
+      <button type="submit">Register</button>
+    </form>
+
+    <button id="loadProtectedPage">Load Protected Page</button> -->
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3" hidden>
+          <h2 class="mb-3">Login</h2>
+          <form>
+            <div class="form-group">
+              <label for="loginEmail">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="loginEmail"
+                placeholder="Enter email"
+              />
             </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-success complBTN">
-                Complete
-              </button>
-              <button type="button" class="btn btn-danger resObj">Reset</button>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="loginPassword"
+                placeholder="Password"
+              />
             </div>
-          </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
         </div>
 
-        <!-- col 2 -->
-        <div class="col">
-          <div class="row secondaryRow">
-            <div class="col"><p class="counter"></p></div>
-          </div>
-
-          <div class="row secondaryRow">
-            <div class="col">
-              <button class="UpDown btnDown">Down</button>
-              <button class="btnStart">Start</button>
-              <button class="UpDown btnUp">Up</button>
+        <div class="col-md-6 offset-md-3 mt-4">
+          <h2 class="mb-3">Register</h2>
+          <form>
+            <div class="form-group">
+              <label for="registerName">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="registerName"
+                placeholder="Enter your name"
+              />
             </div>
-          </div>
-
-          <div class="row secondaryRow">
-            <div class="col">
-              <button class="btnS res45">45</button>
-              <button class="btnS res60">60</button>
-              <button class="btnS res90">90</button>
+            <div class="form-group">
+              <label for="registerEmail">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="registerEmail"
+                placeholder="Enter email"
+              />
             </div>
-          </div>
-          <div class="row secondaryRow">
-            <div class="alert"></div>
-          </div>
+            <div class="form-group">
+              <label for="registerPassword">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="registerPassword"
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
         </div>
-        <!-- col 3 -->
-        <div class="col mainRow"></div>
       </div>
     </div>
 
@@ -70,7 +98,12 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
+      defer
     ></script>
-    <script type="module" src="./js/timer.js" charset="uft-8"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
