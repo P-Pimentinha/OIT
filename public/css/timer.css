@@ -21,6 +21,15 @@
   text-align: center;
 }
 
+.complBTN {
+  background-color: rgb(92, 179, 92);
+  border: transparent;
+}
+
+.resObj {
+  background-color: rgb(179, 95, 92);
+}
+
 #set {
   font-size: 40px;
 }

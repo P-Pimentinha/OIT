@@ -84,7 +84,7 @@ function registerUser(name, email, password) {
       timerPageLoad(response);
     })
     .catch((error) => {
-      console.error('Registration failed:', error);
+      erreMessage('Something went wrong.');
     });
 }
 

@@ -22,11 +22,7 @@ import errorHandlerMiddleware from './middleware/error-handler.js';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import path from 'path';
-
-// app.use(express.static('public'));
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// only when ready to deploy
 app.use(express.static(path.resolve(__dirname, './public')));
 
 app.use(express.json());
