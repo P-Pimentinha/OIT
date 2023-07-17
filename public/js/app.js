@@ -59,9 +59,12 @@ function loginUser(email, password) {
       timerPageLoad(response);
     })
     .catch((error) => {
-      // Handle errors here (e.g., display an error message).
-
-      console.log(error.code);
+      const errorMessage = document.getElementById('errorMessage');
+      if (error.request.status === 401) {
+        erreMessage('Incorrect Email or Password');
+      } else {
+        erreMessage('Try again later.');
+      }
     });
 }
 
@@ -100,4 +103,13 @@ function timerPageLoad(res) {
     .catch((error) => {
       console.error('Error fetching protected page:', error);
     });
+}
+
+function erreMessage(message) {
+  const errorMessage = document.getElementById('errorMessage');
+  errorMessage.removeAttribute('hidden', '');
+  errorMessage.innerText = message;
+  setTimeout(function () {
+    errorMessage.setAttribute('hidden', '');
+  }, 4000);
 }
