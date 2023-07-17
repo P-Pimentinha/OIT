@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const registerEmail = document.getElementById('registerEmail');
   const registerPassword = document.getElementById('registerPassword');
 
+  const registerOption = document.getElementById('registerOption');
+  const loginOption = document.getElementById('loginOption');
+
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const email = loginEmail.value;
@@ -23,6 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = registerEmail.value;
     const password = registerPassword.value;
     registerUser(name, email, password);
+  });
+
+  registerOption.addEventListener('click', (event) => {
+    loginOption.removeAttribute('hidden', '');
+    registerForm.removeAttribute('hidden', '');
+
+    registerOption.setAttribute('hidden', '');
+    loginForm.setAttribute('hidden', '');
+  });
+
+  loginOption.addEventListener('click', (event) => {
+    loginOption.setAttribute('hidden', '');
+    registerForm.setAttribute('hidden', '');
+
+    registerOption.removeAttribute('hidden', '');
+    loginForm.removeAttribute('hidden', '');
   });
 });
 
