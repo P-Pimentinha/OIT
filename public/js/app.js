@@ -4,14 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const loginEmail = document.getElementById('loginEmail');
   const loginPassword = document.getElementById('loginPassword');
-  //   const loadButton = document.getElementById('loadProtectedPage');
 
   const registerForm = document.getElementById('registerForm');
   const registerName = document.getElementById('registerName');
   const registerEmail = document.getElementById('registerEmail');
   const registerPassword = document.getElementById('registerPassword');
-
-  //   loadButton.addEventListener('click', loadProtectedPage);
 
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -37,29 +34,15 @@ function loginUser(email, password) {
       password: password,
     })
     .then((response) => {
-      // Handle the successful response here (e.g., show a success message or save the token).
+      // saves the response to localStorage
       localStorage.setItem('user', JSON.stringify(response.data.user));
       localStorage.setItem('token', response.data.token);
-      console.log('Login successful!', response.data);
-
-      axios
-        .get(`/timer`, {
-          headers: {
-            Authorization: `Bearer ${response.data.token}`,
-          },
-        })
-        .then((response) => {
-          document.open();
-          document.write(response.data);
-          document.close();
-        })
-        .catch((error) => {
-          console.error('Error fetching protected page:', error);
-        });
+      timerPageLoad(response);
     })
     .catch((error) => {
       // Handle errors here (e.g., display an error message).
-      console.error('Login failed:', error);
+
+      console.log(error.code);
     });
 }
 
@@ -72,59 +55,27 @@ function registerUser(name, email, password) {
       password: password,
     })
     .then((response) => {
-      // Handle the successful response here (e.g., show a success message or redirect to the login page).
+      // saves the response to localStorage
       localStorage.setItem('user', JSON.stringify(response.data.user));
       localStorage.setItem('token', response.data.token);
-      // console.log('Registration successful!', response.data);
 
-      axios
-        .get(`/timer`, {
-          headers: {
-            Authorization: `Bearer ${response.data.token}`,
-          },
-        })
-        .then((response) => {
-          document.open();
-          document.write(response.data);
-          document.close();
-        })
-        .catch((error) => {
-          console.error('Error fetching protected page:', error);
-        });
+      timerPageLoad(response);
     })
     .catch((error) => {
-      // Handle errors here (e.g., display an error message).
       console.error('Registration failed:', error);
     });
 }
 
-// // Function to handle the click event on the link
-// function handleTimerLinkClick(event) {
-//   event.preventDefault(); // Prevent the default link behavior (navigating to the href)
-//   const token = 'Bearer ' + localStorage.getItem('token');
-//   axios.defaults.headers.common['Authorization'] = token;
-
-//   // Fetch the /timer endpoint with the Bearer token in the Authorization header
-//   axios
-//     .get('/timer')
-//     .then((response) => {})
-//     .catch((error) => {
-//       console.error('Error fetching /timer:', error);
-//     });
-// }
-
-function loadProtectedPage() {
-  const token = localStorage.getItem('token');
-
+function timerPageLoad(res) {
   axios
     .get(`/timer`, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${res.data.token}`,
       },
     })
-    .then((response) => {
+    .then((res) => {
       document.open();
-      document.write(response.data);
+      document.write(res.data);
       document.close();
     })
     .catch((error) => {
