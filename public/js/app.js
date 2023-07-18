@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     loginUser(email, password);
   });
 
-  registerForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const name = registerName.value;
-    const email = registerEmail.value;
-    const password = registerPassword.value;
-    registerUser(name, email, password);
-  });
+  // registerForm.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   const name = registerName.value;
+  //   const email = registerEmail.value;
+  //   const password = registerPassword.value;
+  //   registerUser(name, email, password);
+  // });
 
   registerOption.addEventListener('click', (event) => {
     loginOption.removeAttribute('hidden', '');
