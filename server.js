@@ -29,9 +29,13 @@ app.use(express.json());
 app.use(helmet());
 app.use(compression());
 
-app.get('/timer', authenticateUser, function (request, response) {
-  response.sendFile(path.resolve(__dirname, './public/pages', 'timer.html'));
-});
+try {
+  app.get('/timer', authenticateUser, function (request, response) {
+    response.sendFile(path.resolve(__dirname, './public/pages', 'timer.html'));
+  });
+} catch (error) {
+  console.log(error);
+}
 
 // app.get('/wotd', function (request, response) {
 //   response.sendFile(
