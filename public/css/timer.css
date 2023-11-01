@@ -1,19 +1,120 @@
-.timer {
-  /* margin: 0 auto;
-  text-align: center; */
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  align-items: center;
+}
+
+/* Style the left column (scoreboard) */
+.left-column {
+  flex: 1;
+  /* color: #fff; 
+  padding: 20px;
+  border-radius: 5px; */
+}
+
+/* Style the middle column (canvas) */
+.middle-column {
+  flex: 2;
+  /* Background color for the canvas */
+  /* padding: 10px; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.col {
+  padding: 10px;
+}
+
+/* Style the right column (empty) */
+.right-column {
+  flex: 1;
+}
+
+.btnS {
+  width: 70px;
+  height: auto;
+  background-color: rgb(92, 179, 143);
+
+  cursor: pointer;
+  color: #fff;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+
+.UpDown {
+  margin: 0 auto;
+  text-align: center;
+
+  width: 70px;
+
+  cursor: pointer;
+  color: #fff;
+  background: #2cb1bc;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.btnStart {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+
+  width: 60px;
+  background-color: rgb(92, 179, 92);
+
+  cursor: pointer;
+  color: #fff;
+  border: transparent;
+  border-radius: 0.25rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+
+.disable {
+  opacity: 50%;
+}
+
+.alert {
+  width: 300px;
+  height: 120px;
+  background-color: rgb(92, 179, 92);
+
+  border: transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.alertY {
+  background-color: rgb(179, 92, 92);
 }
 
 .counter {
   /* width: 100px; */
   font-size: 400%;
-}
-
-.mainRow {
-  height: 500px;
-}
-
-.secondaryRow {
-  height: 80px;
 }
 
 .buttons {
@@ -42,97 +143,6 @@
   width: 85px;
 }
 
-.btnS {
-  width: 70px;
-  height: auto;
-  background-color: rgb(92, 179, 143);
-
-  cursor: pointer;
-  color: #fff;
-  border: transparent;
-  border-radius: 0.25rem;
-  letter-spacing: 1px;
-  padding: 0.375rem 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease-in-out all;
-  text-transform: capitalize;
+.hide {
+  display: none;
 }
-
-.UpDown {
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 25px;
-  width: 70px;
-
-  cursor: pointer;
-  color: #fff;
-  background: #2cb1bc;
-  border: transparent;
-  border-radius: 0.25rem;
-  letter-spacing: 1px;
-  padding: 0.375rem 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease-in-out all;
-  text-transform: capitalize;
-  display: inline-block;
-}
-
-.btnStart {
-  margin: 0 auto;
-  text-align: center;
-  display: inline-block;
-  margin-top: 25px;
-  width: 60px;
-  background-color: rgb(92, 179, 92);
-
-  cursor: pointer;
-  color: #fff;
-  border: transparent;
-  border-radius: 0.25rem;
-  letter-spacing: 1px;
-  padding: 0.375rem 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease-in-out all;
-  text-transform: capitalize;
-}
-
-.disable {
-  opacity: 50%;
-}
-
-.alert {
-  width: 250px;
-  height: 70px;
-  background-color: rgb(92, 179, 92);
-  margin: 0 auto;
-
-  border: transparent;
-  border-radius: 0.25rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.alertY {
-  background-color: rgb(179, 92, 92);
-}
-
-/* .container,
-.container-fluid {
-  background-color: rgb(109, 240, 194);
-  border: black solid 15px;
-  color: rgb(0, 0, 0);
-}
-
-.row {
-  background-color: rgb(236, 93, 23);
-  border: rgb(255, 199, 64) solid 3px;
-}
-
-[class*='col'] {
-  border: black solid 5px;
-  background-color: rgb(49, 21, 85);
-  color: rgb(255, 255, 255);
-} */

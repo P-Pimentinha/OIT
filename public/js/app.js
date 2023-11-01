@@ -13,6 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const registerOption = document.getElementById('registerOption');
   const loginOption = document.getElementById('loginOption');
 
+  let test = localStorage.getItem('token');
+  if (localStorage.getItem('token')) {
+    axios
+      .get(`/timer`, {
+        headers: {
+          Authorization: `Bearer ${test}`,
+        },
+      })
+      .then((res) => {
+        document.open();
+        document.write(res.data);
+        document.close();
+      })
+      .catch((error) => {
+        console.error('Error fetching protected page:', error);
+      });
+  }
+
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const email = loginEmail.value;
