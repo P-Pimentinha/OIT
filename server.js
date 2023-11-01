@@ -13,6 +13,7 @@ import 'express-async-errors';
 //routers
 import wordRouter from './routes/wordsRoutes.js';
 import authRouter from './routes/authRoutes.js';
+import stepsRouter from './routes/stepsRoutes.js';
 
 //middleware
 import notFoundMiddleware from './middleware/not-found.js';
@@ -42,6 +43,7 @@ app.get('/timer', authenticateUser, function (request, response) {
 
 app.use('/api/v1/words', wordRouter);
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/steps', stepsRouter);
 
 //error handling
 app.use(notFoundMiddleware);

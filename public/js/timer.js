@@ -21,13 +21,14 @@ const steps = new Steps();
 let interval;
 
 // Sets the Initial Timer to the default value 60; or to the value in localStorage
-(function setTimer() {
+(async function setTimer() {
   const time = localStorage.getItem('timer');
-  const goalInputLS = localStorage.getItem('goalInput');
-  const reachedInputLS = localStorage.getItem('reachedInput');
-  goalInput.value = steps.getGoal();
-  reachedInput.value = steps.getSteps();
 
+  goalInput.value = await steps.getGoal();
+  reachedInput.value = await steps.getSteps();
+  remaining.innerHTML = (await steps.getGoal()) - (await steps.getSteps());
+
+  steps.getGoal();
   timerObj.setTime(time && time !== 0 ? time : 60);
 
   counter.innerHTML = timerObj.getTime();
@@ -72,6 +73,16 @@ function timerFunc() {
 startButton.addEventListener('click', initTimer);
 upButton.addEventListener('click', timerObj.add.bind(timerObj, counter));
 downButton.addEventListener('click', timerObj.sub.bind(timerObj, counter));
+
+goalInput.addEventListener('input', () => {
+  steps.setGoal(goalInput.value);
+});
+
+reachedInput.addEventListener('input', () => {
+  steps.setSteps(reachedInput.value);
+});
+
+mySubmitButton.addEventListener('click', steps.updateGoal.bind(steps));
 
 resOne.addEventListener('click', timerObj.setTimerOne.bind(timerObj, counter));
 resTwo.addEventListener('click', timerObj.setTimerTwo.bind(timerObj, counter));
