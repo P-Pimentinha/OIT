@@ -4,16 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const loginEmail = document.getElementById('loginEmail');
   const loginPassword = document.getElementById('loginPassword');
-
   const registerForm = document.getElementById('registerForm');
   const registerName = document.getElementById('registerName');
   const registerEmail = document.getElementById('registerEmail');
   const registerPassword = document.getElementById('registerPassword');
-
   const registerOption = document.getElementById('registerOption');
   const loginOption = document.getElementById('loginOption');
 
   let test = localStorage.getItem('token');
+
   if (localStorage.getItem('token')) {
     axios
       .get(`/timer`, {

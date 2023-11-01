@@ -15,60 +15,14 @@
     <title>Timer</title>
   </head>
   <body>
-    <!-- bootstrap layout -->
-    <!-- <div class="container text-center mt-5">
-      <div class="row mainRow">
-        
-        <div class="col mt-4">
-          <div class="row">
-            <div class="col">
-              <p id="set"></p>
-              <p id="completed"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-danger resObj">Reset</button>
-              <button type="button" class="btn btn-success complBTN">
-                Complete
-              </button>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- col 2 -->
-        <!-- <div class="col">
-          <div class="row secondaryRow">
-            <div class="col"><p class="counter"></p></div>
-          </div>
-
-          <div class="row secondaryRow">
-            <div class="col">
-              <button class="UpDown btnDown">Down</button>
-              <button class="btnStart">Start</button>
-              <button class="UpDown btnUp">Up</button>
-            </div>
-          </div>
-
-          <div class="row secondaryRow">
-            <div class="col">
-              <button class="btnS res45">45</button>
-              <button class="btnS res60">60</button>
-              <button class="btnS res90">90</button>
-            </div>
-          </div>
-          <div class="row secondaryRow">
-            <div class="alert"></div>
-          </div>
-        </div> -->
-        <!-- col 3 -->
-        <div class="col mainRow"></div>
-      </div>
-    </div>
-
     <div class="container">
       <!-- LEFT -->
-      <div class="left-column"></div>
+      <div class="left-column">
+        <input type="number" id="goalInput" placeholder="Goal" />
+        <input type="number" id="reachedInput" placeholder="Reached" />
+        <p>Remaining</p>
+        <button id="myButton">Submit</button>
+      </div>
       <!-- MID -->
       <div class="middle-column">
         <div class="col"><p class="counter"></p></div>
@@ -82,9 +36,8 @@
           <button class="btnS res60">60</button>
           <button class="btnS res90">90</button>
         </div>
-        
-          <div class="alert hide"></div>
-        
+
+        <div class="alert hide"></div>
       </div>
 
       <!-- RIGHT -->

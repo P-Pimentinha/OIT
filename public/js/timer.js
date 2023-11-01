@@ -1,5 +1,6 @@
 import Timer from './timer/Timer.js';
-import Set from './timer/Set.js';
+
+import Steps from './timer/Steps.js';
 
 const counter = document.querySelector('.counter');
 const startButton = document.querySelector('.btnStart');
@@ -13,7 +14,8 @@ const disableButtons = document.querySelector('.btnToDisable');
 const disableButtonsTwo = document.querySelector('.btnToDisableTwo');
 
 const timerObj = new Timer();
-const setObj = new Set();
+
+const steps = new Steps();
 
 // let timer = 50;
 let interval;
@@ -21,31 +23,17 @@ let interval;
 // Sets the Initial Timer to the default value 60; or to the value in localStorage
 (function setTimer() {
   const time = localStorage.getItem('timer');
+  const goalInputLS = localStorage.getItem('goalInput');
+  const reachedInputLS = localStorage.getItem('reachedInput');
+  goalInput.value = steps.getGoal();
+  reachedInput.value = steps.getSteps();
 
-  if (time && time != 0) {
-    timerObj.setTime(time);
-  } else {
-    timerObj.setTime(60);
-  }
+  timerObj.setTime(time && time !== 0 ? time : 60);
 
   counter.innerHTML = timerObj.getTime();
 })();
 
 function initTimer() {
-  // startButton.classList.add('disable');
-  // startButton.setAttribute('disabled', '');
-  // upButton.classList.add('disable');
-  // upButton.setAttribute('disabled', '');
-  // downButton.classList.add('disable');
-  // downButton.setAttribute('disabled', '');
-
-  // resOne.classList.add('disable');
-  // resOne.setAttribute('disabled', '');
-  // resTwo.classList.add('disable');
-  // resTwo.setAttribute('disabled', '');
-  // resThree.classList.add('disable');
-  // resThree.setAttribute('disabled', '');
-
   disableButtons.classList.add('hide');
   disableButtons.setAttribute('hide', '');
 
@@ -62,20 +50,6 @@ function initTimer() {
 
 function timerFunc() {
   if (timerObj.getTime() === 0) {
-    // startButton.classList.remove('disable');
-    // startButton.removeAttribute('disabled', '');
-    // upButton.classList.remove('disable');
-    // upButton.removeAttribute('disabled', '');
-    // downButton.classList.remove('disable');
-    // downButton.removeAttribute('disabled', '');
-
-    // resOne.classList.remove('disable');
-    // resOne.removeAttribute('disabled', '');
-    // resTwo.classList.remove('disable');
-    // resTwo.removeAttribute('disabled', '');
-    // resThree.classList.remove('disable');
-    // resThree.removeAttribute('disabled', '');
-
     disableButtons.classList.remove('hide');
     disableButtons.removeAttribute('hide', '');
 
