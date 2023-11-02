@@ -27,8 +27,14 @@ let interval;
   goalInput.value = await steps.getGoal();
   reachedInput.value = await steps.getSteps();
   remaining.innerHTML = (await steps.getGoal()) - (await steps.getSteps());
+  remainingDaysSpan.innerHTML = remainingDays();
+  // prettier-ignore
+  dailyAverage.innerHTML = Math.floor(
+    ((await steps.getGoal()) - (await steps.getSteps())) / remainingDays()
+  );
 
-  steps.getGoal();
+  console.log('days:' + remainingDays());
+
   timerObj.setTime(time && time !== 0 ? time : 60);
 
   counter.innerHTML = timerObj.getTime();
@@ -90,3 +96,20 @@ resThree.addEventListener(
   'click',
   timerObj.setTimerThree.bind(timerObj, counter)
 );
+
+function remainingDays() {
+  // Get the current date
+  const currentDate = new Date();
+
+  // Get the current year
+  const currentYear = currentDate.getFullYear();
+
+  // Create a new date for the end of the year (December 31)
+  const endOfYear = new Date(currentYear, 11, 31); // Months are zero-based (0 = January, 11 = December)
+
+  // Calculate the difference in days
+  const timeDifference = endOfYear - currentDate;
+  const remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+  return remainingDays;
+}

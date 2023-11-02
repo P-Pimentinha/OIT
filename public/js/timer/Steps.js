@@ -4,6 +4,7 @@ export default class Steps {
     this.steps = steps;
     this.url = '/api/v1/steps';
     this.id = '';
+    this.stepsArray = [];
   }
 
   async getGoal() {
@@ -14,6 +15,7 @@ export default class Steps {
 
       this.goal = steps[0].goal;
       this.id = steps[0]._id;
+      this.stepsArray[0] = steps;
       return this.goal;
     } catch (error) {
       console.error('Error:', error);

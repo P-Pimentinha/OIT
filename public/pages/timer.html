@@ -18,10 +18,22 @@
     <div class="container">
       <!-- LEFT -->
       <div class="left-column">
-        <input type="number" id="goalInput" placeholder="Goal" />
-        <input type="number" id="reachedInput" placeholder="Reached" />
-        <p id="remaining"></p>
-        <button id="mySubmitButton">Submit</button>
+        <input
+          type="number"
+          class="minimal-input"
+          id="goalInput"
+          placeholder="Goal"
+        />
+        <input
+          type="number"
+          class="minimal-input"
+          id="reachedInput"
+          placeholder="Reached"
+        />
+        <p>Total: <span id="remaining"></span></p>
+        <p>Days Until End Of The Year: <span id="remainingDaysSpan"></span></p>
+        <p>Daily Average: <span id="dailyAverage"></span></p>
+        <button id="mySubmitButton" class="btnSubmit">Submit</button>
       </div>
       <!-- MID -->
       <div class="middle-column">
